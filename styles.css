@@ -1,0 +1,236 @@
+.block_floating_studentdata {
+    margin-top: -1rem;
+    border: 0 !important;
+}
+.block_floating_studentdata .card-body {
+    min-height: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+}
+header .star-menu {
+    display: block;
+}
+@media(min-width: 1200px) {
+    header .star-menu {
+        display: none;
+    }
+}
+#main-content .star-menu {
+    display: none;
+}
+@media(min-width: 1200px) {
+    #main-content .star-menu {
+        display: block;
+    }
+}
+.studentdata-modal {
+    background-color: #a0271d;
+    padding: 2rem;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    position: fixed;
+    color: white;
+    right: -34px;
+    top: 40%;
+    z-index: 9999;
+    cursor: pointer;
+    border-radius: 0;
+
+}
+.studentdata-modal-results {
+    width: auto !important;
+    left: unset !important;
+}
+.star-modal-content {
+    box-shadow: #a8a2a2 1px 1px 11px;
+    max-height: 500px !important;
+    overflow: scroll !important;
+}
+.pagelayout-starcourse .modal-backdrop,
+.path-mod-edwiserform .modal-backdrop{
+    background: none !important;
+}
+.pagelayout-starcourse.modal-open,
+.path-mod-edwiserform.modal-open {
+    overflow: visible !important;
+}
+.studentdata-modal-close {
+    background-color: #205493 !important;
+    opacity: unset !important;
+}
+.studentdata-modal-close:hover,
+.studentdata-modal-close:focus {
+    background-color: white !important;
+    border: 2px solid #205493 !important;
+    color: #205493 !important;
+}
+.usa-accordion__content {
+    border: 3px solid #f1f1f1;
+    padding: 1.5rem 1rem;
+}
+.usa-accordion__heading {
+    margin-bottom: 0;
+}
+.usa-accordion__button {
+    margin-bottom: -2px;
+    border-radius: 0 !important;
+    display: flex !important;
+}
+.usa-accordion__button .fa {
+    padding-left: 1rem;
+}
+.usa-accordion__button .fa-minus {
+    display: block;
+}
+.usa-accordion__button .fa-plus {
+    display: none;
+}
+.usa-accordion__button.collapsed .fa-minus {
+    display: none;
+}
+.usa-accordion__button.collapsed .fa-plus {
+    display: block;
+}
+table td a {
+    display: block;
+}
+.visibility-hidden {
+    visibility: hidden;
+}
+.visibility-hidden i {
+    visibility: visible;
+}
+.show-student-info {
+    cursor: pointer;
+}
+.hidden-student-info {
+    display: none;
+    position: absolute;
+    top: 0;
+    border: 2px solid #000;
+    border-radius: 25px;
+    text-align: left;
+    padding: 12px;
+    background-color: white;
+    z-index: 99999;
+    width: 100%;
+    min-width: 200px;
+    height: auto;
+}
+table.studentdata tbody tr td:first-child {
+    display: inline-flex;
+}
+table.studentdata tr {
+    background-color: #fff !important;
+}
+table.studentdata td a {
+    text-decoration: none;
+}
+table.studentdata td a .fa-trash {
+    padding-top: 1px;
+}
+table.studentdata td {
+    border: 0 !important;
+    background-color: #fff !important;
+    position: relative;
+}
+table.studentdata tbody tr {
+    border-bottom: 1px solid #000 !important;
+}
+table.studentdata th {
+    border-bottom: 2px solid #000 !important;
+}
+table.studentdata th,
+table.studentdata td {
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-top: 0;
+    text-align: center;
+}
+.add-student .delete-student {
+    float: right;
+}
+/*///------------------------------*/
+.star-content-above .accordion .usa-accordion__button {
+    margin-bottom: 0 !important;
+}
+.star-content-above .accordion .usa-accordion__content {
+    padding: 0;
+    border: 0;
+}
+.student-view.no-students {
+    display: none;
+}
+.student-view .student-data tbody tr {
+    background-color: white !important;
+}
+.student-view .student-data tbody tr td{
+    border-bottom: 0 !important;
+}
+.student-view.fluency-studentdata-chart form {
+    overflow: auto !important;
+}
+.student-view.fluency-studentdata-chart table thead th {
+    min-width: 100px;
+}
+.student-view.fluency-studentdata-chart table thead tr th:first-of-type,
+.student-view.fluency-studentdata-chart table thead tr th:nth-child(2){
+    min-width: auto !important;
+}
+
+.studentdata.instructional_priorities tr.fluency td.fluency,
+.studentdata.instructional_priorities tr.alpha td.alpha,
+.studentdata.instructional_priorities tr.vocab td.vocab,
+.studentdata.instructional_priorities tr.compre td.compre {
+    background-color: #f1f1f1 !important;
+}
+
+table.student-data th,
+table.student-data td {
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-top: 0;
+    text-align: center;
+}
+table.student-data td {
+    background-color: #fff !important;
+}
+table.student-data thead th{
+    background-color: #f1f1f1 !important;
+}
+table.student-data {
+    margin-top: 0 !important;
+    border: 3px solid #f1f1f1;
+}
+table.student-data tbody tr td:first-child {
+    display: inline-flex;
+}
+table.studentdata td label,
+table.student-data td label {
+    margin-top: 0;
+}
+table.studentdata input.student-delete-checkbox,
+table.student-data input.student-delete-checkbox {
+    margin-right: 0px;
+}
+table.studentdata td .fa-edit,
+table.student-data td .fa-edit {
+    font-size: 28px;
+}
+table.student-data td a {
+    width: 25px;
+    height: 25px;
+}
+table.student-data td a .fa-trash {
+    padding-top: 1px;
+}
+table.student-data tbody tr {
+    border-bottom: 1px solid #000 !important;
+}
+table.student-data th {
+    border-bottom: 2px solid #000 !important;
+}
+.block_student_data block .card-title {
+    display: none !important;
+}
+

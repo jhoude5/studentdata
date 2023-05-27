@@ -1,0 +1,62 @@
+<div class="student-view {{^data}}no-students{{/data}}">
+<div class="accordion"><div class="accordion-item">
+<h3 class="usa-accordion__heading">
+    <button class="usa-accordion__button collapsed" type="button" aria-expanded="false">
+        Student Data<i class="fa fa-plus"></i><i class="fa fa-minus"></i>
+    </button>
+</h3>
+<div id="collapseone" class="accordion-collapse usa-accordion__content usa-prose collapse"><div class="accordion-body">
+    <form action="/local/studentdata/deletestudent.php" method="post"><input type="hidden" name="action" value="selected">
+    <table class="student-data table table-striped">
+    <thead>
+      <tr>
+          <th id="name">Name</th>
+          <th id="begin">At what level did you begin testing?</th>
+          <th id="level1">Accurate at Level 1</th>
+          <th id="level2">Accurate at Level 2</th>
+          <th id="level3">Accurate at Level 3</th>
+          <th id="level4">Accurate at Level 4</th>
+          <th id="level5">Accurate at Level 5</th>
+          <th id="level6">Accurate at Level 6</th>
+          <th id="level7">Accurate at Level 7</th>
+          <th id="level8">Accurate at Level 8</th>
+          <th id="highest">Good rate & prosody on highest passage?</th>
+          <th id="accuracy">Fluency instructional level: Accuracy</td>
+          <th id="rate">Fluency instructional level: Rate and prosody</td>
+      </tr>
+    </thead>
+    <tbody>
+
+
+  {{#data}}
+    <tr>
+        <td headers="name">{{{name}}}</td>
+        <td headers="begin">{{{begin_level_fluency}}}</td>
+        <td headers="level1">{{{radioar1}}}</td>
+        <td headers="level2">{{{radioar2}}}</td>
+        <td headers="level3">{{{radioar3}}}</td>
+        <td headers="level4">{{{radioar4}}}</td>
+        <td headers="level5">{{{radioar5}}}</td>
+        <td headers="level6">{{{radioar6}}}</td>
+        <td headers="level7">{{{radioar7}}}</td>
+        <td headers="level8">{{{radioar8}}}</td>
+        <td headers="highest">{{{radioarr1}}}</td>
+        <td headers="accuracy">{{{accuracy}}}</td>
+        <td headers="rate">{{{rates}}}</td>
+    </tr>
+    {{/data}}
+
+    </tbody>
+
+
+  </table>
+
+    </form></div></div>
+
+</div></div>
+</div>
+  {{^data}}
+  <p class="style:width:100%">No students added</p>
+  <p><a href="/local/studentdata/studentform.php" class="btn btn-primary">Add a student</a>
+  <a href="/local/studentdata/importstudents.php" class="btn btn-primary" title="import students">Import sample students</a></p>
+  {{/data}}

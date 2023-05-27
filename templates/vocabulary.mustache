@@ -1,0 +1,73 @@
+<div class="student-view {{^data}}no-students{{/data}}">
+<div class="accordion"><div class="accordion-item">
+<h3 class="usa-accordion__heading">
+    <button class="usa-accordion__button collapsed" type="button" aria-expanded="false">
+        Student Data<i class="fa fa-plus"></i><i class="fa fa-minus"></i>
+    </button>
+</h2>
+<div id="collapseone" class="accordion-collapse usa-accordion__content usa-prose collapse"><div class="accordion-body">
+    <form action="/local/studentdata/deletestudent.php" method="post"><input type="hidden" name="action" value="selected">
+    <table class="student-data table table-striped">
+    <thead>
+      <tr>
+          <th id="delete"><i class="fa fa-trash" title="Select students to delete" aria-hidden="true"></i><span class="sr-only">Select students to delete</span></th>
+          <th id="edit"><i class="fa fa-edit" title="Click the icon to edit the student" aria-hidden="true"></i><span class="sr-only">Click the icon to edit the student</span></th>
+          <th id="name">Name</th>
+        <th id="begin">At what level did you begin testing?</th>
+          <th id="level1">Level 1</th>
+        <th id="level2">Level 2</th>
+        <th id="level3">Level 3</th>
+        <th id="level4">Level 4</th>
+        <th id="level5">Level 5</th>
+        <th id="level6">Level 6</th>
+        <th id="level7">Level 7</th>
+        <th id="level8">Level 8</th>
+        <th id="instruct">Vocabulary instructional level</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+{{#data}}
+    <tr>
+        <td headers="delete">
+            <label>
+                <input class="student-delete-checkbox" id="student-{{id}}" type="checkbox" name="selected_ids[{{id}}]" value="{{id}}" title="Select student {{{name}}} for deletion.">
+                <span class="sr-only">Select student {{{name}}} for deletion.</span>
+            </label>
+        </td>
+        <td headers="edit"><a href="/local/studentdata/studentform.php?id={{id}}" class="visibility-hidden" title="Edit student {{{name}}}"><i class="fa fa-edit"></i>Edit student {{{name}}}</a></td>
+        <td headers="name">{{{name}}}</td>
+        <td headers="begin">{{{begin_level_vocab}}}</td>
+        <td headers="level1">{{{level1acc}}}</td>
+        <td headers="level2">{{{level2acc}}}</td>
+        <td headers="level3">{{{level3acc}}}</td>
+        <td headers="level4">{{{level4acc}}}</td>
+        <td headers="level5">{{{level5acc}}}</td>
+        <td headers="level6">{{{level6acc}}}</td>
+        <td headers="level7">{{{level7acc}}}</td>
+        <td headers="level8">{{{level8acc}}}</td>
+        <td headers="instruct">{{{instructvocab}}}</td>
+    </tr>
+      {{/data}}
+
+    </tbody>
+
+
+  </table>
+        <div class="row"><div class="mr-auto mt-2 px-4">
+            <input type="hidden" name="action" value="selected">
+            <a href="/local/studentdata/studentform.php" class="btn btn-secondary">Add a student</a>
+            <a href="/local/studentdata/importstudents.php" class="btn btn-primary" title="import students">Import sample students</a>
+        </div>
+            <div class="">
+                <input type="submit" value="Delete students" class="btn btn-primary"/>
+            </div></div>
+    </form></div></div>
+  </div></div>
+  </div>
+  {{^data}}
+  <p class="style:width:100%">No students added</p>
+  <p><a href="/local/studentdata/studentform.php" class="btn btn-primary">Add a student</a>
+  <a href="/local/studentdata/importstudents.php" class="btn btn-primary" title="import students">Import sample students</a></p>
+  {{/data}}

@@ -1,0 +1,225 @@
+<form action="/local/studentdata/deletestudent.php" method="post" class="row">
+<div class="grid">
+    <div class="row border mx-1">
+        <table class="my-0 studentdata table table-striped">
+            <thead>
+            <tr>
+                <th id="delete"><i class="fa fa-trash" title="Select students to delete"
+                                   aria-hidden="true"></i><span class="sr-only">Select students to delete</span>
+                </th>
+                <th id="edit"><i class="fa fa-edit" title="Click the icon to edit the student"
+                                 aria-hidden="true"></i><span
+                        class="sr-only">Click the icon to edit the student</span></th>
+                <th id="name">Name</th>
+                <th id="tabe">TABE/CASAS GLE</th>
+                <th id="alpha">Alphabetics</th>
+                <th id="fluency-acc">Fluency (Accuracy)</th>
+                <th id="fluency-rate">Fluency (Rate and prosody)</th>
+                <th id="vocab">Vocabulary</th>
+                <th id="compre">Comprehension</th>
+            </tr>
+            </thead>
+            {{#data}}
+                <tr>
+                    <td headers="delete">
+                        <label>
+                            <input class="student-delete-checkbox" id="student-{{id}}" type="checkbox"
+                                   name="selected_ids[{{id}}]" value="{{id}}"
+                                   title="Select student {{{name}}} for deletion.">
+                            <span class="sr-only">Select student {{{name}}} for deletion.</span>
+                        </label>
+                    </td>
+                    <td headers="edit"><a href="/local/studentdata/studentform.php?id={{id}}" title="Edit student {{{name}}}"><i
+                            class="fa fa-edit" aria-hidden="true"></i><span
+                            class="sr-only">Edit student {{{name}}}</a></span></td>
+                    <td headers="name">
+                        {{#name}}<a class="show-student-info" href="#"><strong>{{{name}}}</strong></a>{{/name}}
+                        <div class="hidden-student-info">
+                            <b>Student: {{{name}}}</b><br/>
+                            Notes: {{{notes}}}
+                        </div>
+                    </td>
+                    <td headers="tabe">{{{tabe}}}</td>
+                    <td headers="alpha">
+                        {{#alphabetics_level}}<a class="show-student-info" href="#">{{{alphabetics_level}}}</a>{{/alphabetics_level}}
+                        <div class="hidden-student-info">
+                            <b>Student: {{{name}}}</b><br/>
+                            Began testing at: {{{highest_level_alphabetics}}}<br/>
+                            <b>Words correct at: </b><br/>
+                            {{#level1}}
+                                Grade 1: {{{level1}}}<br/>
+                            {{/level1}}
+                            {{#level1}}
+                                Grade 2: {{{level2}}}<br/>
+                            {{/level1}}
+                            {{#level1}}
+                                Grade 3: {{{level3}}}<br/>
+                            {{/level1}}
+                            {{#level1}}
+                                Grade 4: {{{level4}}}<br/>
+                            {{/level1}}
+                            {{#level1}}
+                                Grade 5: {{{level5}}}<br/>
+                            {{/level1}}
+                            {{#level1}}
+                                Grade 6: {{{level6}}}<br/>
+                            {{/level1}}
+                            {{#level1}}
+                                Grade 7: {{{level7}}}<br/>
+                            {{/level1}}
+                            {{#level1}}
+                                Grade 8: {{{level8}}}<br/>
+                            {{/level1}}
+                            Highest level: {{{highest}}}
+                        </div>
+                    </td>
+                    <td headers="fluency-acc">
+                        {{#accuracy}}<a class="show-student-info" href="#">{{{accuracy}}}</a>{{/accuracy}}
+                        <div class="hidden-student-info">
+                            <b>Student: {{{name}}}</b><br/>
+                            <b>Good rate and prosody?</b> {{{radioarr1}}}<br/>
+                            Began testing at: {{{begin_level_fluency}}}<br/>
+                            <b>Accurate at:</b><br/>
+                            {{#radioar1}}
+                                Level 1: {{{radioar1}}}<br/>
+                            {{/radioar1}}
+                            {{#radioar2}}
+                                Level 2: {{{radioar2}}}<br/>
+                            {{/radioar2}}
+                            {{#radioar3}}
+                                Level 3: {{{radioar3}}}<br/>
+                            {{/radioar3}}
+                            {{#radioar4}}
+                                Level 4: {{{radioar4}}}<br/>
+                            {{/radioar4}}
+                            {{#radioar5}}
+                                Level 5: {{{radioar5}}}<br/>
+                            {{/radioar5}}
+                            {{#radioar6}}
+                                Level 6: {{{radioar6}}}<br/>
+                            {{/radioar6}}
+                            {{#radioar7}}
+                                Level 7: {{{radioar7}}}<br/>
+                            {{/radioar7}}
+                            {{#radioar8}}
+                                Level 8: {{{radioar8}}}<br/>
+                            {{/radioar8}}
+                        </div>
+                    </td>
+                    <td headers="fluency-rate">
+                        {{#rates}}<a class="show-student-info" href="#">{{{rates}}}</a>{{/rates}}
+                        <div class="hidden-student-info">
+                            <b>Student: {{{name}}}</b><br/>
+                            <b>Good rate and prosody?</b> {{{radioarr1}}}<br/>
+                            Began testing at: {{{begin_level_fluency}}}<br/>
+                            <b>Accurate at:</b><br/>
+                            {{#radioar1}}
+                                Level 1: {{{radioar1}}}<br/>
+                            {{/radioar1}}
+                            {{#radioar2}}
+                                Level 2: {{{radioar2}}}<br/>
+                            {{/radioar2}}
+                            {{#radioar3}}
+                                Level 3: {{{radioar3}}}<br/>
+                            {{/radioar3}}
+                            {{#radioar4}}
+                                Level 4: {{{radioar4}}}<br/>
+                            {{/radioar4}}
+                            {{#radioar5}}
+                                Level 5: {{{radioar5}}}<br/>
+                            {{/radioar5}}
+                            {{#radioar6}}
+                                Level 6: {{{radioar6}}}<br/>
+                            {{/radioar6}}
+                            {{#radioar7}}
+                                Level 7: {{{radioar7}}}<br/>
+                            {{/radioar7}}
+                            {{#radioar8}}
+                                Level 8: {{{radioar8}}}<br/>
+                            {{/radioar8}}
+                        </div>
+                    </td>
+
+                    <td headers="vocab">
+                        {{#instructvocab}}<a class="show-student-info" href="#">{{{instructvocab}}}</a>{{/instructvocab}}
+                        <div class="hidden-student-info">
+                            <b>Student: {{{name}}}</b><br/>
+                            Began testing at: {{{begin_level_vocab}}}<br/>
+                            <b>Accurate at:</b><br/>
+                            {{#level1acc}}
+                                Level 1: {{{level1acc}}}<br/>
+                            {{/level1acc}}
+                            {{#level2acc}}
+                                Level 2: {{{level2acc}}}<br/>
+                            {{/level2acc}}
+                            {{#level3acc}}
+                                Level 3: {{{level3acc}}}<br/>
+                            {{/level3acc}}
+                            {{#level4acc}}
+                                Level 4: {{{level4acc}}}<br/>
+                            {{/level4acc}}
+                            {{#level5acc}}
+                                Level 5: {{{level5acc}}}<br/>
+                            {{/level5acc}}
+                            {{#level6acc}}
+                                Level 6: {{{level6acc}}}<br/>
+                            {{/level6acc}}
+                            {{#level7acc}}
+                                Level 7: {{{level7acc}}}<br/>
+                            {{/level7acc}}
+                            {{#level8acc}}
+                                Level 8: {{{level8acc}}}<br/>
+                            {{/level8acc}}
+                        </div>
+                    </td>
+                    <td headers="compre">
+                        {{#comprehension}}<a class="show-student-info" href="#">{{{comprehension}}}</a>{{/comprehension}}
+                        <div class="hidden-student-info">
+                            <b>Student: {{{name}}}</b><br/>
+                            Began testing at: {{{begin_level_compre}}}<br/>
+                            <b>{{{comprehension_label}}} at: </b><br/>
+                            {{#level1perc}}
+                                {{{comprehension_label}}} Level 1: {{{level1perc}}}<br/>
+                            {{/level1perc}}
+                            {{#level2perc}}
+                                {{{comprehension_label}}} Level 2: {{{level2perc}}}<br/>
+                            {{/level2perc}}
+                            {{#level3perc}}
+                                {{{comprehension_label}}} Level 3: {{{levelperc3}}}<br/>
+                            {{/level3perc}}
+                            {{#level4perc}}
+                                {{{comprehension_label}}} Level 4: {{{level4perc}}}<br/>
+                            {{/level4perc}}
+                            {{#level5perc}}
+                                {{{comprehension_label}}} Level 5: {{{level5perc}}}<br/>
+                            {{/level5perc}}
+                            {{#level6perc}}
+                                {{{comprehension_label}}} Level 6: {{{level6perc}}}<br/>
+                            {{/level6perc}}
+                            {{#level7perc}}
+                                {{{comprehension_label}}} Level 7: {{{level7perc}}}<br/>
+                            {{/level7perc}}
+                            {{#level8perc}}
+                                {{{comprehension_label}}} Level 8: {{{level8perc}}}<br/>
+                            {{/level8perc}}
+                        </div>
+                    </td>
+                </tr>
+            {{/data}}
+        </table>
+        {{^data}}
+            <div class="card-body"><p>There are no results.</p></div>
+        {{/data}}
+    </div>
+</div>
+
+    <div class="mr-auto mt-2 px-4">
+        <input type="hidden" name="action" value="selected">
+        <a href="/local/studentdata/studentform.php" class="btn btn-secondary">Add a student</a>
+        <a href="/local/studentdata/importstudents.php" class="btn btn-primary" title="import students">Import sample students</a>
+    </div>
+    <div class="">
+        <input type="submit" value="Delete students" class="btn btn-primary"/>
+        <button onclick="window.print()" class="usa-button usa-button-secondary float-right">Print table</button>
+    </div>
+</form>

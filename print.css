@@ -1,0 +1,7 @@
+@media print {
+    .usa-section-meta,
+    .usa-header,
+    .btn-secondary {
+        display: none !important;
+    }
+}
